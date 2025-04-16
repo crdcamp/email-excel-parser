@@ -40,14 +40,12 @@ def parse_excel():
             api_key=os.environ['ANTHROPIC_API_KEY'],
         )
         
-        # Define system prompt based on your requirements
+        # Define system prompt to match message_parser format
         system_prompt = """
-        Analyze this CSV data and provide:
-        1. A summary of the data structure
-        2. Key statistical insights
-        3. Any anomalies or patterns detected
-        
-        Format your response as JSON with these sections.
+        Extract the name, email address, phone number, and organization from this Excel data as a csv with headers.
+        Format should be 'name,email,phone,organization'.
+        If the name, email address, phone number, or organization is missing, leave the corresponding column in the csv blank.
+        Your entire response should be only the CSV data with no additional text.
         """
         
         # Send to Claude API
@@ -71,5 +69,6 @@ def parse_excel():
         
         print(f"DEBUG - Claude's analysis of {csv_file}:")
         print(message.content)
-
-parse_excel()
+        
+if __name__ == "__main__":
+    parse_excel()

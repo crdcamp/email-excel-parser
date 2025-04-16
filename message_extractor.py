@@ -30,3 +30,6 @@ def extract_message():
 
     else:
         print("No .msg files found")
+
+if __name__ == "__main__":
+    extract_message()

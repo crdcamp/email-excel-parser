@@ -18,6 +18,9 @@ def extract_excel():
             # Save as CSV
             df.to_csv(csv_path, index=False)
             print(f"Converted {excel_file} to {csv_filename}")
-            
+
     else:
         print("No Excel files found")
+
+if __name__ == "__main__":
+    extract_excel()
