@@ -5,10 +5,11 @@ from excel_parser import parse_excel
 
 def process_all_emails():
     extract_message()
-    parse_message
+    parse_message()
 
 def process_all_excel():
     extract_excel()
     parse_excel()
 
 process_all_emails()
+process_all_excel()
