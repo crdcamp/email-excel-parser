@@ -19,7 +19,5 @@ def extract_excel():
             df.to_csv(csv_path, index=False)
             print(f"Converted {excel_file} to {csv_filename}")
             
-            # Print the dataframe for debugging
-            print(df)
     else:
         print("No Excel files found")
